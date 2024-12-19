@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "category": "food",
+    "price": "500",
+    "amount": "2"
+  },
+  { "id": 2, "category": "idk", "price": "120", "amount": "1" },
+  { "id": 3, "category": "Dining Out", "price": "30", "amount": "3" },
+  { "id": 4, "category": "Gas", "price": "40", "amount": "1" }
+]
