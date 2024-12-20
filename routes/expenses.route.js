@@ -10,9 +10,9 @@ const useRouter = Router();
 
 useRouter.get('/', getExpense);
 
-useRouter.post('/', hasKeyMiddlewear, createExpense);
+useRouter.post('/',  createExpense);
 
-useRouter.delete('/:id', deleteExpense);
+useRouter.delete('/:id',hasKeyMiddlewear, deleteExpense);
 
 useRouter.put('/:id', editExpense);
 
