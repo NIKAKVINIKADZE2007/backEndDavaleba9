@@ -12,8 +12,18 @@ const newPath = path.join(__dirname, '..', 'expense.json');
 
 const getExpense = async (req, res) => {
   const data = await getData();
+  const { page, take } = req.query;
 
-  res.json(data);
+  if (!page || !take)
+    return res.status(400).json({ message: 'both take and page is requeied' });
+
+  const totalpages = Math.ceil(data.length / take);
+  if (page > totalpages || page < 1)
+    return res.status(400).json({ message: 'page not found ' });
+
+  const shownData = data.splice((page - 1) * take, page * take);
+
+  res.status(200).json(shownData);
 };
 
 const createExpense = async (req, res) => {
